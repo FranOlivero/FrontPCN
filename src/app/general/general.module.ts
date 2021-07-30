@@ -1,14 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 
 import { CarritoComponent } from './pages/carrito/carrito.component';
 import { AcercaComponent } from './pages/acerca/acerca.component';
-import { ProductoCatComponent } from './pages/producto/producto-cat/producto-cat.component';
-import { ProductoComponent } from './pages/producto/producto-cat-sel/producto/producto.component';
-import { ProvinciaComponent } from './pages/producto/producto-cat-sel/provincia/provincia.component';
-import { ProductorComponent } from './pages/producto/producto-cat-sel/productor/productor.component';
 import { GeneralRoutingModule } from './general-routing.module';
+import { ProductosComponent } from './pages/producto/productos/productos.component';
+import { ProductoDetalleComponent } from './pages/producto/producto-detalle/producto-detalle.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,15 +15,13 @@ import { GeneralRoutingModule } from './general-routing.module';
   declarations: [
     CarritoComponent,
     AcercaComponent,
-    ProductoCatComponent,
-    ProductoComponent,
-    ProvinciaComponent,
-    ProductorComponent
+    ProductosComponent,
+    ProductoDetalleComponent
   ],
   imports: [
     CommonModule,
     GeneralRoutingModule,
-    RouterModule
+    FormsModule
   ]
 })
 export class GeneralModule { }

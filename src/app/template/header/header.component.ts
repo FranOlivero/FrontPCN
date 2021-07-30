@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
+import { CarritoService } from 'src/app/general/service/carrito.service';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  public cantidad:number = 0;
+  constructor( private carritoService:CarritoService, private  ngZone:NgZone ) { 
+  }
 
   ngOnInit(): void {
+    this.ngZone.runOutsideAngular(() => {
+      this.cantidad = this.carritoService.carritoCantidad
+    });
   }
 
 }
